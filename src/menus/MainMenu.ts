@@ -29,6 +29,7 @@ export class MainMenu extends Menu {
     const currentPath = this.path;
     Menu.bancoPath.push(currentPath);
     while (Menu.bancoPath.length > 0) {
+      console.log(`teste`)
       this.showMenu();
       option = await ask("Escolha opcao: ");
       if (option == "q") {
