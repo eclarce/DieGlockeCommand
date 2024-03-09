@@ -7,6 +7,7 @@ async function main() {
   console.log("Die Glocke V.2 - strataemontanus");
   console.log("==============================");
   await new MainMenu().execute();
+  console.log("Programa terminou");
   process.exit(0);
 }
 

@@ -1,3 +1,5 @@
 export abstract class Menu {
-  abstract showMenu(): void
+  path: string = "";
+  static bancoPath: string[] = [];
+  abstract showMenu(): void;
 }
