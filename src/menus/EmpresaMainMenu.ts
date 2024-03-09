@@ -1,14 +1,10 @@
-import { ask } from "../prompts/prompt";
-import { MainMenu } from "./MainMenu";
 import { Menu } from "./Menu";
-import { AjudaMenu } from "./AjudaMenu";
-let option: string = "";
-let currentPath: string = "";
-const ajudaMenu = new AjudaMenu();
+// let option: string = "";
+// let currentPath: string = "";
+// const ajudaMenu = new AjudaMenu();
 export class EmpresaMainMenu extends Menu {
   showMenu() {
-    console.log(`Action:`, EmpresaMainMenu.name);
-    console.log(Menu.bancoPath);
+
     console.log("==============================");
     console.log("Cadastrar empresa          [c]");
     console.log("Ver empresas cadastradas   [t]");
@@ -19,19 +15,19 @@ export class EmpresaMainMenu extends Menu {
     console.log("Sair  [s]");
   }
 
-  async execute(s: string) {
-    if (s == "e") {
-      this.path = "empresa";
-      currentPath = this.path;
-      Menu.bancoPath.push(currentPath);
-      while (Menu.bancoPath.length > 1) {
-        this.showMenu();
-        option = await ask("Opcao empresa: ");
-        if (option == "s") {
-          Menu.bancoPath.splice(1, 1);
-        }
-        await ajudaMenu.execute(option);
-      }
-    }
-  }
+  // async execute(s: string) {
+  //   if (s == "e") {
+  //     this.path = "empresa";
+  //     currentPath = this.path;
+  //     Menu.paths.push(currentPath);
+  //     while (Menu.paths.length > 1) {
+  //       this.showMenu();
+  //       option = await ask("Opcao empresa: ");
+  //       if (option == "s") {
+  //         Menu.paths.splice(1, 1);
+  //       }
+  //       await ajudaMenu.execute(option);
+  //     }
+  //   }
+  // }
 }

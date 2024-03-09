@@ -9,7 +9,7 @@ const ajudaMenu = new AjudaMenu();
 export class ContaMainMenu extends Menu {
   showMenu() {
     console.log(`Action:`, ContaMainMenu.name);
-    console.log(Menu.bancoPath);
+    console.log(Menu.paths);
     console.log("==============================");
     console.log("Cadastrar conta            [c]");
     console.log("Ver contas cadastradas     [t]");
@@ -24,12 +24,12 @@ export class ContaMainMenu extends Menu {
     if (s == "c") {
       this.path = "conta";
       currentPath = this.path;
-      Menu.bancoPath.push(currentPath);
-      while (Menu.bancoPath.length > 1) {
+      Menu.paths.push(currentPath);
+      while (Menu.paths.length > 1) {
         this.showMenu();
         option = await ask("Opcao conta: ");
         if (option == "s") {
-          Menu.bancoPath.splice(1, 1);
+          Menu.paths.splice(1, 1);
         }
         await ajudaMenu.execute(option);
         await actionsConta.iniciaCadastroConta(option);
