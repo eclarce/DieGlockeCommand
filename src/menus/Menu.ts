@@ -46,18 +46,18 @@ export abstract class Menu {
 
       // Se option for o quit key terminar esse loop e voltar para o
       // menu anterior.
-      if (this.option === this.quitKey) {
+      if (this.quitKey.toUpperCase() === this.option.toUpperCase()) {
         return;
       }
 
       // Verifica se tem algum menu com a key obtida
       for (const sub of this.subMenus) {
-        if (sub.key === this.option) menuToExecute = sub;
+        if (sub.key?.toUpperCase() === this.option.toUpperCase()) menuToExecute = sub;
       }
 
       // Verifica se tem algum command com a key
       for (const cmdEntry of this.commands) {
-        if (cmdEntry.key === this.option) commandToExecute = cmdEntry;
+        if (cmdEntry.key.toUpperCase() === this.option.toUpperCase()) commandToExecute = cmdEntry;
       }
 
       try {
