@@ -1,34 +1,16 @@
-import { ask } from "../prompts/prompt";
 import { Menu } from "./Menu";
-import { AjudaMenu } from "./AjudaMenu";
 // let option: string = "";
 // let currentPath: string = "";
 // const ajudaMenu = new AjudaMenu();
 export class CategoriaMainMenu extends Menu {
+  setupSubMenus(): void {}
+  setupCommands(): void {
+    // todo commands categoria
+  }
   showMenu() {
-    console.log("==============================");
     console.log("Cadastrar categoria        [c]");
     console.log("Ver categorias cadastradas [t]");
     console.log("Pesquisar categorias       [p]");
     console.log("Editar categorias          [e]");
-    console.log("==============================");
-    console.log("Ajuda [a]");
-    console.log("Sair  [s]");
   }
-
-  // async execute(s: string) {
-  //   if (s == "g") {
-  //     this.path = "categoria";
-  //     currentPath = this.path;
-  //     Menu.paths.push(currentPath);
-  //     while (Menu.paths.length > 1) {
-  //       this.showMenu();
-  //       option = await ask("Opcao categoria: ");
-  //       if (option == "s") {
-  //         Menu.paths.splice(1, 1);
-  //       }
-  //       await ajudaMenu.execute(option);
-  //     }
-  //   }
-  // }
 }
